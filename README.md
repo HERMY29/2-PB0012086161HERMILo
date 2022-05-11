@@ -1,2 +1,123 @@
 # 2-PB0012086161HERMILo
-// HERMILO PALOMEQUE GOMEZ // GRUPO 001 16/03/21  #include &lt;iostream> #include &lt;stdlib.h> #include &lt;string.h> #include &lt;string> #include &lt;fstream> using namespace std;  struct cita {     char NdP[100], HdT[100], tratamiento[100], desc[100];     float T = 0, PreU, PUT;     int CdT;  };  int main() {     int opcion = 1, op, i, j;     cita cliente[3];      while (opcion == 1)     {         cout &lt;&lt; "-----Elija una opcion segun el numero-----" &lt;&lt; endl;         cout &lt;&lt; " 1 Agendar cita " &lt;&lt; endl;         cout &lt;&lt; " 2 Modificar cita " &lt;&lt; endl;         cout &lt;&lt; " 3 Eliminar cita" &lt;&lt; endl;         cout &lt;&lt; " 4 Lista de citas vigentes" &lt;&lt; endl;         cout &lt;&lt; " 5 Salir" &lt;&lt; endl;         cin >> opcion;          system("CLS");          switch (opcion)         {          case 1:              for (i = 0; i &lt; 3; i++)             {                 cout &lt;&lt; " --- Agendar cita --- " &lt;&lt; endl;                 cout &lt;&lt; "Numero de registro: " &lt;&lt; i + 1 &lt;&lt; endl;                 cout &lt;&lt; " Ingrese el nombre del paciente" &lt;&lt; endl;                 cin >> cliente[i].NdP;                   cout &lt;&lt; " Ingrese el tratamiento" &lt;&lt; endl;                 cin >> cliente[i].tratamiento;                   cout &lt;&lt; " Ingrese la hora de tratamiento" &lt;&lt; endl;                 cin >> cliente[i].HdT;                   cout &lt;&lt; " Ingrese la descripcion del tratamiento" &lt;&lt; endl;                 cin >> cliente[i].desc;                   cout &lt;&lt; " Ingrese el precio unitario del tratamiento" &lt;&lt; endl;                 cin >> cliente[i].PUT;                   cout &lt;&lt; " Ingrece el precio unitario" &lt;&lt; endl;                 cin >> cliente[i].PreU;                   cout &lt;&lt; " Ingrese la cantidad del tratamiento" &lt;&lt; endl;                 cin >> cliente[i].CdT;                   cout &lt;&lt; " ---------------------- " &lt;&lt; endl;                 cliente[i].T = cliente[i].PreU * cliente[i].CdT;                 cout &lt;&lt; "El total es:" &lt;&lt; cliente[i].T &lt;&lt; endl;                  system("CLS");              }              break;          case 3:             cout &lt;&lt; "ingrese el numero registro";             cin >> j;             j = j - 1;             cout &lt;&lt; "ingrese que desea modificar: " &lt;&lt; endl;              cin >> op;           case 4:             for (i = 0; i &lt; 3; i++)             {                 cout &lt;&lt; "------------------------" &lt;&lt; endl;                 cout &lt;&lt; "Numero de registro: " &lt;&lt; i + 1 &lt;&lt; endl;                 cout &lt;&lt; "Nombre del paciente: " &lt;&lt; cliente[i].NdP &lt;&lt; endl;                 cout &lt;&lt; "Tratamiento: " &lt;&lt; cliente[i].tratamiento &lt;&lt; endl;                 cout &lt;&lt; "Hora de tratamiento: " &lt;&lt; cliente[i].HdT &lt;&lt; endl;                 cout &lt;&lt; "Descripcion: " &lt;&lt; cliente[i].desc &lt;&lt; endl;                 cout &lt;&lt; "Precio unitario de Tratamiento: " &lt;&lt; cliente[i].PUT &lt;&lt; endl;                 cout &lt;&lt; "Precio unitario: " &lt;&lt; cliente[i].PreU &lt;&lt; endl;                 cout &lt;&lt; "Cantidad de tratamiento: " &lt;&lt; cliente[i].CdT &lt;&lt; endl;                 cout &lt;&lt; "Total: " &lt;&lt; cliente[i].T &lt;&lt; endl;               }              break;          }           cout &lt;&lt; "Desea volver al menu?" &lt;&lt; endl;         cout &lt;&lt; "1 Para Sí,2 para no" &lt;&lt; endl;         cin >> opcion;          system("CLS");      }      return 0;
+// HERMILO PALOMEQUE GOMEZ // GRUPO 001 16/03/21 
+#include <iostream>
+#include <stdlib.h>
+#include <string.h>
+#include <string>
+#include <fstream>
+using namespace std;
+
+struct cita
+{
+    char NdP[100], HdT[100], tratamiento[100], desc[100];
+    float T = 0, PreU, PUT;
+    int CdT;
+
+};
+
+int main()
+{
+    int opcion = 1, op, i, j;
+    cita cliente[3];
+
+    while (opcion == 1)
+    {
+        cout << "-----Elija una opcion segun el numero-----" << endl;
+        cout << " 1 Agendar cita " << endl;
+        cout << " 2 Modificar cita " << endl;
+        cout << " 3 Eliminar cita" << endl;
+        cout << " 4 Lista de citas vigentes" << endl;
+        cout << " 5 Salir" << endl;
+        cin >> opcion;
+
+        system("CLS");
+
+        switch (opcion)
+        {
+
+        case 1:
+
+            for (i = 0; i < 3; i++)
+            {
+                cout << " --- Agendar cita --- " << endl;
+                cout << "Numero de registro: " << i + 1 << endl;
+                cout << " Ingrese el nombre del paciente" << endl;
+                cin >> cliente[i].NdP;
+
+
+                cout << " Ingrese el tratamiento" << endl;
+                cin >> cliente[i].tratamiento;
+
+
+                cout << " Ingrese la hora de tratamiento" << endl;
+                cin >> cliente[i].HdT;
+
+
+                cout << " Ingrese la descripcion del tratamiento" << endl;
+                cin >> cliente[i].desc;
+
+
+                cout << " Ingrese el precio unitario del tratamiento" << endl;
+                cin >> cliente[i].PUT;
+
+
+                cout << " Ingrece el precio unitario" << endl;
+                cin >> cliente[i].PreU;
+
+
+                cout << " Ingrese la cantidad del tratamiento" << endl;
+                cin >> cliente[i].CdT;
+
+
+                cout << " ---------------------- " << endl;
+                cliente[i].T = cliente[i].PreU * cliente[i].CdT;
+                cout << "El total es:" << cliente[i].T << endl;
+
+                system("CLS");
+
+            }
+
+            break;
+
+        case 3:
+            cout << "ingrese el numero registro";
+            cin >> j;
+            j = j - 1;
+            cout << "ingrese que desea modificar: " << endl;
+
+            cin >> op;
+
+
+        case 4:
+            for (i = 0; i < 3; i++)
+            {
+                cout << "------------------------" << endl;
+                cout << "Numero de registro: " << i + 1 << endl;
+                cout << "Nombre del paciente: " << cliente[i].NdP << endl;
+                cout << "Tratamiento: " << cliente[i].tratamiento << endl;
+                cout << "Hora de tratamiento: " << cliente[i].HdT << endl;
+                cout << "Descripcion: " << cliente[i].desc << endl;
+                cout << "Precio unitario de Tratamiento: " << cliente[i].PUT << endl;
+                cout << "Precio unitario: " << cliente[i].PreU << endl;
+                cout << "Cantidad de tratamiento: " << cliente[i].CdT << endl;
+                cout << "Total: " << cliente[i].T << endl;
+
+
+            }
+
+            break;
+
+        }
+
+
+        cout << "Desea volver al menu?" << endl;
+        cout << "1 Para Sí,2 para no" << endl;
+        cin >> opcion;
+
+        system("CLS");
+
+    }
+
+    return 0;
+
+}
