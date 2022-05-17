@@ -1,14 +1,13 @@
-a
-
-
-
-
-
-
-
-
-
-
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
 // HERMILO PALOMEQUE GOMEZ // GRUPO 001 16/05/21 
 #include <stdlib.h> 
 #include <string.h> 
@@ -20,9 +19,9 @@ a
 using namespace std;
 
 
-    //string NdP[100], NdT[100], HdT[100], tratamiento[100], desc[100];
-    //float T, PreU, PUT; 
-    //int CdT;
+string NdP[100], NdT[100], HdT[100], tratamiento[100], desc[100];
+float* T, * sT, * PUT;
+int * CdT, * cc;
 
 void c1();
 void c2();
@@ -38,8 +37,7 @@ int main()
     int opcion = 1, op, i, j, cc;
 
     cout << "-----Elija una opcion segun el numero-----" << endl;
-    cout << " 1 Agendar cita " << endl;
-    cout << " 2 Modificar cita " << endl;
+    cout << " 1 Agendar cita " << endl;    cout << " 2 Modificar cita " << endl;
     cout << " 3 Eliminar cita" << endl;
     cout << " 4 Lista de citas vigentes" << endl;
     cout << " 5 Limpiar pantalla" << endl;
@@ -82,14 +80,15 @@ int main()
 
     default:
         cout << "Ingrese opcion valida" << endl;
+        return main();
     }
 }
 
 void c1()
 {
-    string NdP[100], NdT[100], HdT[100], tratamiento[100], desc[100];
-    float sT, T, PreU, PUT;
-    int CdT;
+    string NdP[100], *NdT[100], HdT[100], tratamiento[100], desc[100];
+    float *sT, * T, PreU,* PUT;
+    int* CdT;
     int cc;
 
     cout << "Ingrese la cantidad de personas que desea registrar: " << endl;
@@ -135,9 +134,9 @@ void c1()
 
     void c2()
     {
-        string NdP, NdT, HdT[100], tratamiento[100], desc[100];
-        float T , PreU, PUT;
-        int CdT;
+        string *NdP, * NdT, HdT[100], tratamiento[100], desc[100];
+        float * T , * PreU,  PUT;
+        int  CdT;
         int j, op;
 
         cout << "ingrese el registro a modificar" << endl;
@@ -169,7 +168,7 @@ void c1()
         case 2:
             for (int i = j; i <= j; i++)
             {
-                while (getchar() != '\n');
+                cin.ignore();
                 cout << "No. cita: " << i + 1 << endl;
                 cout << "Ingrese nombre del tratamiento" << endl;
                 getline(cin, NdT[i]);
@@ -220,11 +219,12 @@ void c1()
     
     }
 
-    void c3();
+    void c3()
     {
-        string NdP[100], NdT[100], HdT[100], tratamiento[100], desc[100];
-        float sT, T = 0, PreU, PUT;
-        int CdT;
+
+        string NdP[100], NdT[100],  HdT[100], tratamiento[100], desc[100];
+        float * sT, * T, * PUT;
+        int * CdT;
         int cc;
 
             int j; cout <<"Ingrese cita a eliminar" << endl;
@@ -234,7 +234,7 @@ void c1()
         {
             cout << "Eliminando registro " << j + 1 << endl;
             NdP[i] = " ";
-            HdT[i] = 0;
+            HdT[i] = " ";
             tratamiento[i] = " ";
             desc[i] = " ";
             CdT[i] = 0;
@@ -243,58 +243,3 @@ void c1()
             T[i] = 0;
         }
     }
-
-
-
-    }
-
-    void c4();
-    {
-
-
-        for (int i = 0; i < cc; i++)
-        {
-            cout << "------------------------" << endl;
-            cout << "Numero de registro: " << i + 1 << endl;
-            cout << "Nombre del paciente: " << NdP[i] << endl;
-            cout << "Tratamiento: " << tratamiento[i] << endl;
-            cout << "Hora de tratamiento: " << HdT[i] << endl;
-            cout << "Descripcion: " << desc[i] << endl;
-            cout << "Precio unitario de Tratamiento: " << PUT[i] << endl;
-            cout << "Cantidad de tratamiento: " << CdT[i] << endl;
-            cout << "Subtotal: " << sT[i] << endl;
-            cout << "Total: " << T[i] << endl;
-
-
-    }
-
-    void c6();
-    {
-        ofstream imp("Datos.txt");
-        for (int i = 0; i < cc; i++)
-        {
-
-
-
-            if (Nomb[i] == " ")
-            {
-
-
-
-            }
-            else
-            {
-                imp << "Nombre: " << NdP[i] << endl;
-                imp << "Hora: " << HdT[i] << ":" << minu[i] << endl;
-                imp << "Nombre del tratamiento: " << tratamiento[i] << endl;
-                imp << "Descripcion: " << desc[i] << endl;
-                imp << "Cantidad del tratamiento: " << CdT[i] << endl;
-                imp << "Precio unitario: " << PUT[i] << endl;
-                imp << "Total a pagar: " << T[i] << endl;
-                imp << "----------------------------------------------------------------------------------------------------------------" << endl;
-            }
-        }
-    }
-
-
-}
