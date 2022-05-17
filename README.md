@@ -1,123 +1,300 @@
-# 2-PB0012086161HERMILo
-// HERMILO PALOMEQUE GOMEZ // GRUPO 001 16/03/21 
+a
+
+
+
+
+
+
+
+
+
+
+// HERMILO PALOMEQUE GOMEZ // GRUPO 001 16/05/21 
+#include <stdlib.h> 
+#include <string.h> 
 #include <iostream>
-#include <stdlib.h>
-#include <string.h>
-#include <string>
+#include <conio.h>
 #include <fstream>
+#include <string>
+
 using namespace std;
 
-struct cita
-{
-    char NdP[100], HdT[100], tratamiento[100], desc[100];
-    float T = 0, PreU, PUT;
-    int CdT;
 
-};
+    //string NdP[100], NdT[100], HdT[100], tratamiento[100], desc[100];
+    //float T, PreU, PUT; 
+    //int CdT;
+
+void c1();
+void c2();
+void c3();
+void c4();
+void c6();
+
 
 int main()
 {
-    int opcion = 1, op, i, j;
-    cita cliente[3];
+    system("cls");
 
-    while (opcion == 1)
+    int opcion = 1, op, i, j, cc;
+
+    cout << "-----Elija una opcion segun el numero-----" << endl;
+    cout << " 1 Agendar cita " << endl;
+    cout << " 2 Modificar cita " << endl;
+    cout << " 3 Eliminar cita" << endl;
+    cout << " 4 Lista de citas vigentes" << endl;
+    cout << " 5 Limpiar pantalla" << endl;
+    cout << " 6 Salir" << endl;
+
+    cin >> opcion;
+
+
+    switch (opcion)
     {
-        cout << "-----Elija una opcion segun el numero-----" << endl;
-        cout << " 1 Agendar cita " << endl;
-        cout << " 2 Modificar cita " << endl;
-        cout << " 3 Eliminar cita" << endl;
-        cout << " 4 Lista de citas vigentes" << endl;
-        cout << " 5 Salir" << endl;
-        cin >> opcion;
+    case 1:
+        c1();
+        return main();
+        break;
 
-        system("CLS");
+    case 2:
+        c2();
+        return main();
+        break;
 
-        switch (opcion)
+    case 3:
+        c3();
+        return main();
+        break;
+
+    case 4:
+        c4();
+        return main();
+        break;
+
+    case 5:
+        system("cls");
+        return main();
+        break;
+
+    case 6:
+        c6();
+        
+        break;
+
+    default:
+        cout << "Ingrese opcion valida" << endl;
+    }
+}
+
+void c1()
+{
+    string NdP[100], NdT[100], HdT[100], tratamiento[100], desc[100];
+    float sT, T, PreU, PUT;
+    int CdT;
+    int cc;
+
+    cout << "Ingrese la cantidad de personas que desea registrar: " << endl;
+    cin >> cc;
+
+    for (int i = 0; i < cc; i++)
+    {
+        cout << " --- Agendar cita --- " << endl;
+        cout << "Numero de registro: " << i + 1 << endl;
+
+        while (getchar() != '\n');
+        cout << " Ingrese el nombre del paciente" << endl;
+        getline(cin, NdP[i]);
+
+        while (getchar() != '\n');
+        cout << " Ingrese el tratamiento" << endl;
+        getline(cin, tratamiento[i]);
+
+        while (getchar() != '\n');
+        cout << " Ingrese la hora de tratamiento" << endl;
+        getline(cin, HdT[i]);
+
+        while (getchar() != '\n');
+        cout << " Ingrese la descripcion del tratamiento" << endl;
+        getline(cin, desc[i]);
+
+
+        cout << " Ingrese el precio unitario del tratamiento" << endl;
+        cin >> PUT[i];
+
+
+        cout << " Ingrese la cantidad del tratamiento" << endl;
+        cin >> CdT[i];
+
+
+        cout << " ---------------------- " << endl;
+        sT[i] = PUT[i] * CdT[i];
+        cout << "El subtotal es:" << sT[i] << endl;
+
+        T[i] = (sT[i] * .16) + sT[i];
+    }
+}
+
+    void c2()
+    {
+        string NdP, NdT, HdT[100], tratamiento[100], desc[100];
+        float T , PreU, PUT;
+        int CdT;
+        int j, op;
+
+        cout << "ingrese el registro a modificar" << endl;
+        cin >> j;
+        j = j - 1;
+
+        cout << "¿Que desea modificar?" << endl;
+        cout << "1.- nombre del paciente"   << endl;
+        cout << "2.- tratamiento " << endl;
+        cout << "3.- hora de tratamiento" << endl;
+        cout << "4.- descripcion" << endl;
+        cout << "5.- precio unitario" << endl;
+        cout << "6.- cantidad de tratamiento" << endl;
+        cin >> op;
+
+        switch (op)
         {
-
         case 1:
-
-            for (i = 0; i < 3; i++)
+            for (int i = j; i <= j; i++)
             {
-                cout << " --- Agendar cita --- " << endl;
-                cout << "Numero de registro: " << i + 1 << endl;
-                cout << " Ingrese el nombre del paciente" << endl;
-                cin >> cliente[i].NdP;
-
-
-                cout << " Ingrese el tratamiento" << endl;
-                cin >> cliente[i].tratamiento;
-
-
-                cout << " Ingrese la hora de tratamiento" << endl;
-                cin >> cliente[i].HdT;
-
-
-                cout << " Ingrese la descripcion del tratamiento" << endl;
-                cin >> cliente[i].desc;
-
-
-                cout << " Ingrese el precio unitario del tratamiento" << endl;
-                cin >> cliente[i].PUT;
-
-
-                cout << " Ingrece el precio unitario" << endl;
-                cin >> cliente[i].PreU;
-
-
-                cout << " Ingrese la cantidad del tratamiento" << endl;
-                cin >> cliente[i].CdT;
-
-
-                cout << " ---------------------- " << endl;
-                cliente[i].T = cliente[i].PreU * cliente[i].CdT;
-                cout << "El total es:" << cliente[i].T << endl;
-
-                system("CLS");
+                while (getchar() != '\n');
+                cout << "No. cita: " << i + 1 << endl;
+                cout << "Ingrese nombre del paciente" << endl;
+                getline(cin, NdP[i]);
 
             }
+            break;
 
+        case 2:
+            for (int i = j; i <= j; i++)
+            {
+                while (getchar() != '\n');
+                cout << "No. cita: " << i + 1 << endl;
+                cout << "Ingrese nombre del tratamiento" << endl;
+                getline(cin, NdT[i]);
+            }
             break;
 
         case 3:
-            cout << "ingrese el numero registro";
-            cin >> j;
-            j = j - 1;
-            cout << "ingrese que desea modificar: " << endl;
-
-            cin >> op;
-
+            for (int i = j; i <= j; i++)
+            {
+                while (getchar() != '\n');
+                cout << "No. cita: " << i + 1 << endl;
+                cout << "Ingrese hora" << endl;
+                getline(cin, HdT[i]);
+            }
+            break;
 
         case 4:
-            for (i = 0; i < 3; i++)
+            for (int i = j; i <= j; i++)
             {
-                cout << "------------------------" << endl;
-                cout << "Numero de registro: " << i + 1 << endl;
-                cout << "Nombre del paciente: " << cliente[i].NdP << endl;
-                cout << "Tratamiento: " << cliente[i].tratamiento << endl;
-                cout << "Hora de tratamiento: " << cliente[i].HdT << endl;
-                cout << "Descripcion: " << cliente[i].desc << endl;
-                cout << "Precio unitario de Tratamiento: " << cliente[i].PUT << endl;
-                cout << "Precio unitario: " << cliente[i].PreU << endl;
-                cout << "Cantidad de tratamiento: " << cliente[i].CdT << endl;
-                cout << "Total: " << cliente[i].T << endl;
-
-
+                while (getchar() != '\n');
+                cout << "No. cita: " << i + 1 << endl;
+                cout << "Ingrese nombre del paciente" << endl;
+                getline(cin, desc[i]);
             }
+            break;
 
+        case 5:
+            for (int i = j; i <= j; i++)
+            {
+                
+                cout << "No. cita: " << i + 1 << endl;
+                cout << "Ingrese el precio unitario" << endl;
+                cin >> PUT;
+            }
+            break;
+
+        case 6:
+            for (int i = j; i <= j; i++)
+            {
+
+                cout << "No. cita: " << i + 1 << endl;
+                cout << "Ingrese la cantidad de tratamiento" << endl;
+                cin >> CdT;
+            }
             break;
 
         }
+    
+    }
+
+    void c3();
+    {
+        string NdP[100], NdT[100], HdT[100], tratamiento[100], desc[100];
+        float sT, T = 0, PreU, PUT;
+        int CdT;
+        int cc;
+
+            int j; cout <<"Ingrese cita a eliminar" << endl;
+        cin >> j;
+        j = j - 1;
+        for (int i = j; i == j; i++)
+        {
+            cout << "Eliminando registro " << j + 1 << endl;
+            NdP[i] = " ";
+            HdT[i] = 0;
+            tratamiento[i] = " ";
+            desc[i] = " ";
+            CdT[i] = 0;
+            PUT[i] = 0;
+            sT[i] = 0;
+            T[i] = 0;
+        }
+    }
 
 
-        cout << "Desea volver al menu?" << endl;
-        cout << "1 Para Sí,2 para no" << endl;
-        cin >> opcion;
-
-        system("CLS");
 
     }
 
-    return 0;
+    void c4();
+    {
+
+
+        for (int i = 0; i < cc; i++)
+        {
+            cout << "------------------------" << endl;
+            cout << "Numero de registro: " << i + 1 << endl;
+            cout << "Nombre del paciente: " << NdP[i] << endl;
+            cout << "Tratamiento: " << tratamiento[i] << endl;
+            cout << "Hora de tratamiento: " << HdT[i] << endl;
+            cout << "Descripcion: " << desc[i] << endl;
+            cout << "Precio unitario de Tratamiento: " << PUT[i] << endl;
+            cout << "Cantidad de tratamiento: " << CdT[i] << endl;
+            cout << "Subtotal: " << sT[i] << endl;
+            cout << "Total: " << T[i] << endl;
+
+
+    }
+
+    void c6();
+    {
+        ofstream imp("Datos.txt");
+        for (int i = 0; i < cc; i++)
+        {
+
+
+
+            if (Nomb[i] == " ")
+            {
+
+
+
+            }
+            else
+            {
+                imp << "Nombre: " << NdP[i] << endl;
+                imp << "Hora: " << HdT[i] << ":" << minu[i] << endl;
+                imp << "Nombre del tratamiento: " << tratamiento[i] << endl;
+                imp << "Descripcion: " << desc[i] << endl;
+                imp << "Cantidad del tratamiento: " << CdT[i] << endl;
+                imp << "Precio unitario: " << PUT[i] << endl;
+                imp << "Total a pagar: " << T[i] << endl;
+                imp << "----------------------------------------------------------------------------------------------------------------" << endl;
+            }
+        }
+    }
+
 
 }
