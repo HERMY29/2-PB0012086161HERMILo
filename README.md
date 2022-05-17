@@ -1,6 +1,6 @@
-// HERMILO PALOMEQUE GOMEZ // GRUPO 001 16/05/21 
 
-// HERMILO PALOMEQUE GOMEZ // GRUPO 001 16/05/21 
+
+// HERMILO PALOMEQUE GOMEZ // GRUPO 001 17/05/21 
 
 #include <iostream>
 #include <stdlib.h> 
